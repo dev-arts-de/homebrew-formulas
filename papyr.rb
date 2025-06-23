@@ -14,15 +14,15 @@ class Papyr < Formula
     sha256 "009bfa1504c9c7ef64d87be55936d142325656bbc6d98c68b669d6472e4beb09"
   end
 
-  # Hier wurde der SHA256-Hash für pypdf2 korrigiert.
   resource "pypdf2" do
     url "https://pypi.io/packages/source/P/PyPDF2/PyPDF2-3.0.1.tar.gz"
     sha256 "a74408f69ba6271f71b9352ef4ed03dc53a31aa404d29b5d31f53bfecfee1440"
   end
 
+  # Hier wurde der SHA256-Hash für tqdm korrigiert.
   resource "tqdm" do
     url "https://pypi.io/packages/source/t/tqdm/tqdm-4.66.4.tar.gz"
-    sha256 "232de5fbe2a3c5822b39882256e093aad569f6e1f0611a9efe58a2d1522a46c1"
+    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
   end
 
   def install
@@ -36,4 +36,3 @@ class Papyr < Formula
     assert_match "usage: papyr", shell_output("#{bin}/papyr --help")
   end
 end
-
