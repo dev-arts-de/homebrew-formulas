@@ -11,7 +11,7 @@ class Papyr < Formula
 
   resource "openai" do
     url "https://pypi.io/packages/source/o/openai/openai-1.35.7.tar.gz"
-    sha256 "05663a848f2b386417754324f469248536e13b860ba26742531245b788a47816"
+    sha256 "009bfa1504c9c7ef64d87be55936d142325656bbc6d98c68b669d6472e4beb09"
   end
 
   resource "pypdf2" do
@@ -25,18 +25,14 @@ class Papyr < Formula
   end
 
   def install
-    # Erstellt eine isolierte Python-Umgebung
     venv = virtualenv_create(libexec, "python3")
-    # Installiert die Python-Pakete in diese Umgebung
     venv.pip_install resources
-    # Kopiert Ihr Skript in die Umgebung
     libexec.install "papyr.py"
-    # Erstellt den finalen 'papyr'-Befehl
     (bin/"papyr").write_env_script libexec/"papyr.py", PATH: "#{venv.root}/bin:$PATH"
   end
 
   test do
-    # Ein einfacher Test, um zu prüfen, ob der Befehl funktioniert
     assert_match "usage: papyr", shell_output("#{bin}/papyr --help")
   end
 end
+
