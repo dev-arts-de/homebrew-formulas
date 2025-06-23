@@ -14,9 +14,10 @@ class Papyr < Formula
     sha256 "009bfa1504c9c7ef64d87be55936d142325656bbc6d98c68b669d6472e4beb09"
   end
 
+  # Hier wurde der SHA256-Hash für pypdf2 korrigiert.
   resource "pypdf2" do
     url "https://pypi.io/packages/source/P/PyPDF2/PyPDF2-3.0.1.tar.gz"
-    sha256 "94b9f02c6347314c99c855cce24e2b0c4f826046e2a2215b252030d0758364cb"
+    sha256 "a74408f69ba6271f71b9352ef4ed03dc53a31aa404d29b5d31f53bfecfee1440"
   end
 
   resource "tqdm" do
